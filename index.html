@@ -52,12 +52,10 @@
                     name.innerHTML = user.displayName;
                     images.src = user.photoURL;
                     // ...
-                    console.log(user)
                     //email=>email photo =>photoURL 
 
                     writeUserData(user.uid,user.displayName,user.email,user.photoURL)
 
-                    window.location.origin = window.location.origin + "/homepage.html"
                    
                 }).catch((error) => {
                     // Handle Errors here.
