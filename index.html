@@ -20,7 +20,6 @@
 
             // Your web app's Firebase configuration
             import { GoogleAuthProvider,getAuth,signInWithRedirect,getRedirectResult,signInWithPopup } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
-            import {getDatabase, set,ref,update} from "https://www.gstatic.com/firebasejs/9.4.0/firebase-database.js";
             const firebaseConfig = {
                 apiKey: "AIzaSyA7Ec_SXBzTMCPGFPLFFQDq9X1Ssa04mcM",
                 authDomain: "sign-with-70f9f.firebaseapp.com",
@@ -54,8 +53,6 @@
                     // ...
                     console.log(user)
                     //email=>email photo =>photoURL 
-
-                    set(ref(database,'users/'+user.uid))
                 
                 }).catch((error) => {
                     // Handle Errors here.
