@@ -9,6 +9,7 @@
 <body>
     <button type="submit" id="signIn">Sign in with Google</button>
     <h1 id="name"></h1>
+    <img id="image">
     <script type="module">
           // Import the functions you need from the SDKs you need
             import { initializeApp } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-app.js";
@@ -36,6 +37,7 @@
 
             let btn =  document.querySelector("#signIn")
             let name = document.querySelector("#name")
+            let images = document.querySelector("#image")
             btn.addEventListener("click",()=>{
                 // signInWithRedirect(auth, provider);
                 signInWithPopup(auth, provider)
@@ -46,10 +48,9 @@
                     // The signed-in user info.
                     const user = result.user;
                     // IdP data available using getAdditionalUserInfo(result)
-                    alert(user.displayName);
-
+                   
                     name.innerHTML = user.displayName;
-
+                    images.src = user.photoURL;
                     // ...
 
                     //email=>email photo =>photoURL 
