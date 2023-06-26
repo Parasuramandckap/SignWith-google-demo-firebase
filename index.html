@@ -4,7 +4,7 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Sign with google and store the user data to databse</title>
 </head>
 <body>
     <button type="submit" id="signIn">Sign in with Google</button>
@@ -56,7 +56,9 @@
                     //email=>email photo =>photoURL 
 
                     writeUserData(user.uid,user.displayName,user.email,user.photoURL)
-                
+
+                    window.location.origin = window.location.origin + "/homepage.html"
+                   
                 }).catch((error) => {
                     // Handle Errors here.
                     const errorCode = error.code;
