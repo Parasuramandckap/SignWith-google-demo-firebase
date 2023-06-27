@@ -8,6 +8,7 @@
 </head>
 <body>
     <button type="submit" id="signIn">Sign in with Google</button>
+    <button type="submit" id="signout">sign out</button>
     <h1 id="name"></h1>
     <img id="image">
     <script type="module">
@@ -20,7 +21,7 @@
 
 
             // Your web app's Firebase configuration
-            import { GoogleAuthProvider,getAuth,signInWithRedirect,getRedirectResult,signInWithPopup } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
+            import { GoogleAuthProvider,getAuth,signInWithPopup,signOut } from "https://www.gstatic.com/firebasejs/9.4.0/firebase-auth.js";
             const firebaseConfig = {
                 apiKey: "AIzaSyA7Ec_SXBzTMCPGFPLFFQDq9X1Ssa04mcM",
                 authDomain: "sign-with-70f9f.firebaseapp.com",
@@ -58,8 +59,8 @@
                     console.log(user)
                     writeUserData(user.uid,user.displayName,user.email,user.photoURL)
 
-                    window.location.assign("home.html")
-
+                    // window.location.assign("home.html")
+                    signOut(auth);
                    
                 }).catch((error) => {
                     // Handle Errors here.
@@ -87,6 +88,14 @@
                         });
                     }
 
+            document.querySelector("signout").addEventListener("click",()=>{
+                signOut(auth)
+                .then(() => {
+                    // Sign-out successful.
+                    }).catch((error) => {
+                    // An error happened.
+                    });
+            })
       </script>
       <script src="./database/db.js"></script>
 </body>
