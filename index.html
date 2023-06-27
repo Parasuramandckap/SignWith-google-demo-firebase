@@ -59,7 +59,7 @@
                     console.log(user)
                     writeUserData(user.uid,user.displayName,user.email,user.photoURL)
 
-                    // window.location.assign("home.html")
+                    window.location.assign("home.html")
                     
                    
                 }).catch((error) => {
@@ -88,15 +88,7 @@
                         });
                     }
 
-            document.querySelector("#signout").addEventListener("click",()=>{
-                signOut(auth)
-                .then(() => {
-                    // Sign-out successful.
-                    alert("sign out success")
-                    }).catch((error) => {
-                    // An error happened.
-                    });
-            })
+
       </script>
       <script src="./database/db.js"></script>
 </body>
