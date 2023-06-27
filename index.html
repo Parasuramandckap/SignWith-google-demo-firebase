@@ -88,10 +88,11 @@
                         });
                     }
 
-            document.querySelector("signout").addEventListener("click",()=>{
+            document.querySelector("#signout").addEventListener("click",()=>{
                 signOut(auth)
                 .then(() => {
                     // Sign-out successful.
+                    alert("sign out success")
                     }).catch((error) => {
                     // An error happened.
                     });
